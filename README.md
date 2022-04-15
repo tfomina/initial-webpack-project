@@ -1,4 +1,4 @@
-# Otus project
+# Webpack base setup + console calculator
 
 ## Запуск приложения
 
