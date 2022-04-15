@@ -1,0 +1,12 @@
+body {
+	background: pink;
+	margin: 20px;
+}
+
+#root {
+	display: inline-block;
+	background-color: purple;
+	padding: 10px;
+	color: white;
+	font-weight: bold;
+}

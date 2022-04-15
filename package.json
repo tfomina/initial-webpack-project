@@ -1,0 +1,80 @@
+{
+	"name": "otus-project",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.ts",
+	"private": true,
+	"scripts": {
+		"start": "webpack serve --mode development",
+		"build": "webpack --mode production",
+		"test": "npx jest",
+		"prettier:fix": "prettier --write .",
+		"prettier:check": "prettier --check .",
+		"lint": "eslint --fix ./src/**/*.{js,jsx,ts,tsx}",
+		"prepare": "husky install",
+		"calc": "ts-node ./src/calculator"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.17.8",
+		"@babel/preset-env": "^7.16.11",
+		"@babel/preset-react": "^7.16.7",
+		"@babel/preset-typescript": "^7.16.7",
+		"@commitlint/cli": "^16.2.3",
+		"@commitlint/config-conventional": "^16.2.1",
+		"@typescript-eslint/eslint-plugin": "^5.15.0",
+		"@typescript-eslint/parser": "^5.15.0",
+		"babel-loader": "^8.2.4",
+		"css-loader": "^6.7.1",
+		"css-minimizer-webpack-plugin": "^3.4.1",
+		"eslint": "^8.2.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-airbnb-typescript": "^16.1.4",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-import": "^2.25.3",
+		"eslint-plugin-jsx-a11y": "^6.5.1",
+		"eslint-plugin-prettier": "^4.0.0",
+		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react-hooks": "^4.3.0",
+		"html-webpack-plugin": "^5.5.0",
+		"husky": "^7.0.4",
+		"jest": "^27.5.1",
+		"lint-staged": "^12.3.7",
+		"mini-css-extract-plugin": "^2.6.0",
+		"postcss": "^8.4.12",
+		"postcss-loader": "^6.2.1",
+		"prettier": "^2.6.0",
+		"style-loader": "^3.3.1",
+		"terser-webpack-plugin": "^5.3.1",
+		"ts-node": "^10.7.0",
+		"typescript": "^4.6.2",
+		"webpack": "^5.70.0",
+		"webpack-bundle-analyzer": "^4.5.0",
+		"webpack-cli": "^4.9.2",
+		"webpack-dev-server": "^4.7.4"
+	},
+	"sideEffects": [
+		"**/*.css"
+	],
+	"husky": {
+		"hooks": {
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"pre-commit": "lint-staged"
+		}
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
+	},
+	"lint-staged": {
+		"src/**/*.{js,jsx,ts,tsx,css}": [
+			"npm run prettier:fix"
+		]
+	},
+	"dependencies": {
+		"mathjs": "^10.4.1"
+	}
+}
