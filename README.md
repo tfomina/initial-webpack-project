@@ -11,3 +11,4 @@ npm run start
 ```
 npm run calc
 ```
+Калькулятор реализован при помощи библиотеки [mathjs](https://mathjs.org/)
